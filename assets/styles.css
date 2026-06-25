@@ -9,15 +9,15 @@
   /* raw brand colors (channels) */
   --sky:        93 183 222;   /* Sky Surge      */
   --strawberry: 229 75 75;    /* Strawberry Red */
-  --ivory:      247 243 227;  /* Ivory Mist     */
+  --ivory:      255 255 255;  /* White          */
   --ink:        4 4 4;        /* Black          */
   --charcoal:   55 63 81;     /* Charcoal Blue  */
 
   /* ---- Light theme (default) ---- */
-  --bg:            247 243 227;  /* Ivory Mist */
+  --bg:            255 255 255;  /* White      */
   --surface:       255 255 255;
-  --surface-2:     238 232 213;
-  --border:        223 215 193;
+  --surface-2:     242 244 246;
+  --border:        230 232 235;
   --text:          4 4 4;        /* Black      */
   --text-muted:    88 96 112;
   --primary:       93 183 222;   /* Sky Surge  */
@@ -33,7 +33,7 @@
   --surface:       28 32 42;
   --surface-2:     55 63 81;     /* Charcoal Blue  */
   --border:        62 70 89;
-  --text:          247 243 227;  /* Ivory Mist     */
+  --text:          255 255 255;  /* White          */
   --text-muted:    156 162 176;
   --primary:       93 183 222;   /* Sky Surge      */
   --primary-hover: 125 199 232;
