@@ -7,41 +7,39 @@
 
 :root {
   /* raw brand colors (channels) */
-  --porcelain: 253 255 252;
-  --baltic:    35 87 137;
-  --flag-red:  193 41 46;
-  --gold:      241 211 2;
-  --shadow:    22 25 37;
+  --sky:        93 183 222;   /* Sky Surge      */
+  --strawberry: 229 75 75;    /* Strawberry Red */
+  --ivory:      247 243 227;  /* Ivory Mist     */
+  --ink:        4 4 4;        /* Black          */
+  --charcoal:   55 63 81;     /* Charcoal Blue  */
 
   /* ---- Light theme (default) ---- */
-  --bg:            253 255 252;  /* Porcelain  */
+  --bg:            247 243 227;  /* Ivory Mist */
   --surface:       255 255 255;
-  --surface-2:     244 246 248;
-  --border:        224 228 233;
-  --text:          22 25 37;     /* Shadow     */
-  --text-muted:    92 100 116;
-  --primary:       35 87 137;    /* Baltic     */
-  --primary-hover: 28 71 113;
-  --on-primary:    253 255 252;
-  --accent-red:    193 41 46;
-  --accent-gold:   241 211 2;
-  --grid-line:     22 25 37;     /* used at very low alpha */
+  --surface-2:     238 232 213;
+  --border:        223 215 193;
+  --text:          4 4 4;        /* Black      */
+  --text-muted:    88 96 112;
+  --primary:       93 183 222;   /* Sky Surge  */
+  --primary-hover: 67 161 207;
+  --on-primary:    4 4 4;        /* black text reads cleanly on Sky */
+  --accent-red:    229 75 75;    /* Strawberry */
+  --grid-line:     4 4 4;        /* used at very low alpha */
 }
 
 .dark {
   /* ---- Dark theme ---- */
-  --bg:            22 25 37;     /* Shadow     */
-  --surface:       30 34 49;
-  --surface-2:     38 43 61;
-  --border:        52 58 78;
-  --text:          253 255 252;  /* Porcelain  */
-  --text-muted:    156 163 184;
-  --primary:       92 154 214;   /* lightened Baltic for contrast */
-  --primary-hover: 124 178 230;
-  --on-primary:    13 24 38;
-  --accent-red:    224 78 83;
-  --accent-gold:   241 211 2;
-  --grid-line:     253 255 252;
+  --bg:            4 4 4;        /* Black          */
+  --surface:       28 32 42;
+  --surface-2:     55 63 81;     /* Charcoal Blue  */
+  --border:        62 70 89;
+  --text:          247 243 227;  /* Ivory Mist     */
+  --text-muted:    156 162 176;
+  --primary:       93 183 222;   /* Sky Surge      */
+  --primary-hover: 125 199 232;
+  --on-primary:    4 4 4;        /* black text on bright Sky */
+  --accent-red:    233 90 90;
+  --grid-line:     247 243 227;
 }
 
 /* smooth theme transition on the things that change */

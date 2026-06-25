@@ -8,11 +8,13 @@ tailwind.config = {
     extend: {
       colors: {
         /* raw brand swatches */
-        porcelain: "rgb(var(--porcelain) / <alpha-value>)",
-        baltic:    "rgb(var(--baltic) / <alpha-value>)",
-        flagred:   "rgb(var(--flag-red) / <alpha-value>)",
-        gold:      "rgb(var(--gold) / <alpha-value>)",
-        shadow:    "rgb(var(--shadow) / <alpha-value>)",
+        sky:        "rgb(var(--sky) / <alpha-value>)",
+        strawberry: "rgb(var(--strawberry) / <alpha-value>)",
+        ivory:      "rgb(var(--ivory) / <alpha-value>)",
+        ink:        "rgb(var(--ink) / <alpha-value>)",
+        charcoal:   "rgb(var(--charcoal) / <alpha-value>)",
+        /* alias kept for the hero gradient (to-shadow) */
+        shadow:     "rgb(var(--ink) / <alpha-value>)",
 
         /* semantic (theme-aware) */
         bg:        "rgb(var(--bg) / <alpha-value>)",
