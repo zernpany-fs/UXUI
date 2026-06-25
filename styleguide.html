@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AppNest — Design System</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/theme.js"></script>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="bg-bg text-text font-sans antialiased min-h-screen">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 backdrop-blur bg-bg/80 border-b border-border">
+    <div class="mx-auto max-w-content px-5 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2.5">
+        <span class="grid place-items-center w-8 h-8 rounded-lg bg-primary text-on-primary font-mono font-bold text-sm">A</span>
+        <span class="font-bold text-lg tracking-tight">App<span class="text-primary">Nest</span></span>
+        <span class="eyebrow text-muted ml-1 hidden sm:inline">/ design system</span>
+      </a>
+      <div class="flex items-center gap-2">
+        <a href="index.html" class="hidden sm:inline-flex items-center h-9 px-3 text-sm font-medium text-muted hover:text-text transition-colors">← Back to site</a>
+        <button data-theme-toggle aria-label="Toggle theme"
+          class="focus-ring inline-flex items-center gap-2 h-9 px-3 rounded-lg border border-border text-sm font-medium hover:bg-surface2 transition-colors">
+          <svg class="w-4 h-4 hidden dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v2M12 19v2M5 12H3M21 12h-2M6.3 6.3 4.9 4.9M19.1 19.1l-1.4-1.4M17.7 6.3l1.4-1.4M4.9 19.1l1.4-1.4"/><circle cx="12" cy="12" r="4"/></svg>
+          <svg class="w-4 h-4 block dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <span data-theme-label>Light</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- INTRO -->
+  <section class="relative overflow-hidden border-b border-border">
+    <div class="grid-backdrop absolute inset-0 pointer-events-none"></div>
+    <div class="relative mx-auto max-w-content px-5 py-12 md:py-16">
+      <p class="eyebrow text-primary mb-3">// AppNest Design System v0.1</p>
+      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight max-w-2xl">The building blocks behind the feed.</h1>
+      <p class="text-muted mt-4 max-w-xl text-lg">Tokens, type and components — built desktop-first, responsive down to mobile, and theme-aware across light & dark.</p>
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-content px-5 py-12 space-y-16">
+
+    <!-- ===== COLORS ===== -->
+    <section>
+      <div class="mb-6"><p class="eyebrow text-primary mb-1">01</p><h2 class="text-2xl font-bold tracking-tight">Color palette</h2></div>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+        <!-- swatch -->
+        <div class="rounded-xl2 border border-border overflow-hidden bg-surface">
+          <div class="h-24" style="background:#FDFFFC;border-bottom:1px solid rgb(var(--border))"></div>
+          <div class="p-3"><p class="font-semibold text-sm">Porcelain</p><p class="font-mono text-xs text-muted">#FDFFFC</p><p class="text-xs text-muted mt-1">Surface / dark text</p></div>
+        </div>
+        <div class="rounded-xl2 border border-border overflow-hidden bg-surface">
+          <div class="h-24" style="background:#235789"></div>
+          <div class="p-3"><p class="font-semibold text-sm">Baltic Blue</p><p class="font-mono text-xs text-muted">#235789</p><p class="text-xs text-primary mt-1 font-medium">Primary</p></div>
+        </div>
+        <div class="rounded-xl2 border border-border overflow-hidden bg-surface">
+          <div class="h-24" style="background:#C1292E"></div>
+          <div class="p-3"><p class="font-semibold text-sm">Flag Red</p><p class="font-mono text-xs text-muted">#C1292E</p><p class="text-xs text-muted mt-1">Breaking / alert</p></div>
+        </div>
+        <div class="rounded-xl2 border border-border overflow-hidden bg-surface">
+          <div class="h-24" style="background:#F1D302"></div>
+          <div class="p-3"><p class="font-semibold text-sm">Bright Gold</p><p class="font-mono text-xs text-muted">#F1D302</p><p class="text-xs text-muted mt-1">Featured / highlight</p></div>
+        </div>
+        <div class="rounded-xl2 border border-border overflow-hidden bg-surface">
+          <div class="h-24" style="background:#161925"></div>
+          <div class="p-3"><p class="font-semibold text-sm">Shadow Grey</p><p class="font-mono text-xs text-muted">#161925</p><p class="text-xs text-muted mt-1">Text / dark surface</p></div>
+        </div>
+      </div>
+      <div class="mt-4 rounded-xl2 border border-border bg-surface2 p-4 text-sm text-muted">
+        <span class="eyebrow text-text">Semantic tokens</span> — UI uses theme-aware names
+        (<code class="font-mono text-primary">bg</code>, <code class="font-mono text-primary">surface</code>,
+        <code class="font-mono text-primary">text</code>, <code class="font-mono text-primary">primary</code>,
+        <code class="font-mono text-primary">border</code>…) that remap automatically in dark mode. Toggle the theme to see it.
+      </div>
+    </section>
+
+    <!-- ===== TYPOGRAPHY ===== -->
+    <section>
+      <div class="mb-6"><p class="eyebrow text-primary mb-1">02</p><h2 class="text-2xl font-bold tracking-tight">Typography</h2></div>
+      <div class="rounded-xl2 border border-border bg-surface divide-y divide-border">
+        <div class="p-5 flex flex-wrap items-baseline gap-x-4 gap-y-1"><span class="eyebrow text-muted w-28">Display</span><span class="text-5xl font-extrabold tracking-tight">Apps worth your Apple</span></div>
+        <div class="p-5 flex flex-wrap items-baseline gap-x-4 gap-y-1"><span class="eyebrow text-muted w-28">H1 / 3xl</span><span class="text-3xl font-bold tracking-tight">Latest in the ecosystem</span></div>
+        <div class="p-5 flex flex-wrap items-baseline gap-x-4 gap-y-1"><span class="eyebrow text-muted w-28">H2 / xl</span><span class="text-xl font-bold">Raycast 2.0 hands-on</span></div>
+        <div class="p-5 flex flex-wrap items-baseline gap-x-4 gap-y-1"><span class="eyebrow text-muted w-28">Body</span><span class="text-base text-muted max-w-lg">The redesign folds AI commands and window management into one keystroke. We spent a week living in it.</span></div>
+        <div class="p-5 flex flex-wrap items-baseline gap-x-4 gap-y-1"><span class="eyebrow text-muted w-28">Eyebrow</span><span class="eyebrow text-primary">// MONO · LABEL · META</span></div>
+      </div>
+      <p class="text-sm text-muted mt-3"><span class="font-semibold text-text">Inter</span> for UI &amp; body · <span class="font-semibold text-text font-mono">JetBrains&nbsp;Mono</span> for labels, meta &amp; numbers.</p>
+    </section>
+
+    <!-- ===== BUTTONS ===== -->
+    <section>
+      <div class="mb-6"><p class="eyebrow text-primary mb-1">03</p><h2 class="text-2xl font-bold tracking-tight">Buttons</h2></div>
+      <div class="rounded-xl2 border border-border bg-surface p-6 flex flex-wrap items-center gap-3">
+        <button class="h-11 px-6 rounded-xl bg-primary text-on-primary font-semibold hover:bg-primary-hover transition-colors focus-ring">Primary</button>
+        <button class="h-11 px-6 rounded-xl border border-border font-semibold hover:bg-surface2 transition-colors focus-ring">Secondary</button>
+        <button class="h-11 px-6 rounded-xl font-semibold text-primary hover:bg-primary/10 transition-colors focus-ring">Ghost</button>
+        <button class="h-11 px-6 rounded-xl bg-red text-white font-semibold hover:opacity-90 transition-opacity focus-ring">Danger</button>
+        <button class="h-9 px-4 rounded-lg bg-primary text-on-primary text-sm font-semibold hover:bg-primary-hover transition-colors focus-ring">Small</button>
+        <button disabled class="h-11 px-6 rounded-xl bg-surface2 text-muted font-semibold cursor-not-allowed">Disabled</button>
+      </div>
+    </section>
+
+    <!-- ===== BADGES ===== -->
+    <section>
+      <div class="mb-6"><p class="eyebrow text-primary mb-1">04</p><h2 class="text-2xl font-bold tracking-tight">Badges &amp; tags</h2></div>
+      <div class="rounded-xl2 border border-border bg-surface p-6 flex flex-wrap items-center gap-3">
+        <span class="inline-flex items-center gap-1.5 h-7 px-3 rounded-full bg-gold text-shadow text-xs font-bold eyebrow">★ Editor's pick</span>
+        <span class="inline-flex items-center gap-1.5 h-7 px-3 rounded-full bg-red/10 text-red text-xs font-bold eyebrow"><span class="w-1.5 h-1.5 rounded-full bg-red animate-pulse-dot"></span>Breaking</span>
+        <span class="inline-flex items-center h-7 px-3 rounded-full bg-gold/15 text-shadow dark:text-gold text-xs font-semibold eyebrow">Trending</span>
+        <span class="inline-flex items-center h-7 px-3 rounded-full bg-primary/10 text-primary text-xs font-semibold eyebrow">macOS</span>
+        <span class="inline-flex items-center h-7 px-3 rounded-full bg-surface2 text-muted text-xs font-semibold eyebrow">Free</span>
+        <span class="inline-flex items-center h-7 px-3 rounded-full bg-surface2 text-muted text-xs font-semibold eyebrow">New</span>
+      </div>
+    </section>
+
+    <!-- ===== CARDS ===== -->
+    <section>
+      <div class="mb-6"><p class="eyebrow text-primary mb-1">05</p><h2 class="text-2xl font-bold tracking-tight">News cards</h2></div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="group rounded-xl2 border border-border bg-surface overflow-hidden hover:border-primary/50 transition-colors">
+          <div class="aspect-[16/9] bg-gradient-to-br from-primary to-shadow grid-backdrop relative">
+            <span class="absolute top-3 left-3 inline-flex items-center h-6 px-2.5 rounded-full bg-gold text-shadow text-xs font-bold eyebrow">★ Pick</span>
+          </div>
+          <div class="p-5">
+            <p class="eyebrow text-muted mb-2">macOS · 5 min</p>
+            <h3 class="font-bold text-lg leading-snug group-hover:text-primary transition-colors">Raycast 2.0 turns your launcher into a workspace OS</h3>
+            <p class="text-sm text-muted mt-2">AI commands, window management and a script store in one keystroke.</p>
+          </div>
+        </article>
+        <article class="group rounded-xl2 border border-border bg-surface p-5 hover:border-red/50 transition-colors">
+          <span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded-full bg-red/10 text-red text-xs font-bold eyebrow mb-3"><span class="w-1.5 h-1.5 rounded-full bg-red animate-pulse-dot"></span>Breaking</span>
+          <h3 class="font-bold text-lg leading-snug group-hover:text-primary transition-colors">iOS 19 opens default-app slots to third-party launchers</h3>
+          <p class="text-sm text-muted mt-2">Launchers can own the home screen in the EU and beyond.</p>
+          <p class="eyebrow text-muted mt-4">2 hours ago</p>
+        </article>
+        <article class="group rounded-xl2 border border-border bg-surface p-5 hover:border-primary/50 transition-colors">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="grid place-items-center w-10 h-10 rounded-xl bg-surface2 font-mono font-bold text-primary">Go</span>
+            <div><h3 class="font-bold leading-tight group-hover:text-primary transition-colors">GoodNotes infinite canvas</h3><p class="eyebrow text-muted mt-0.5">iPadOS · Update</p></div>
+          </div>
+          <p class="text-sm text-muted">Pinch-to-zoom whiteboards for Apple Pencil Pro this week.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== FORMS ===== -->
+    <section>
+      <div class="mb-6"><p class="eyebrow text-primary mb-1">06</p><h2 class="text-2xl font-bold tracking-tight">Inputs &amp; filters</h2></div>
+      <div class="rounded-xl2 border border-border bg-surface p-6 space-y-5">
+        <div class="max-w-md">
+          <label class="eyebrow text-muted block mb-2">Search</label>
+          <div class="relative">
+            <svg class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            <input placeholder="Search apps…" class="focus-ring w-full h-11 pl-10 pr-4 rounded-xl bg-bg border border-border placeholder:text-muted/70" />
+          </div>
+        </div>
+        <div data-filter-group class="flex flex-wrap gap-2">
+          <button data-filter aria-pressed="true"  class="filter-chip">All</button>
+          <button data-filter aria-pressed="false" class="filter-chip">macOS</button>
+          <button data-filter aria-pressed="false" class="filter-chip">iOS</button>
+          <button data-filter aria-pressed="false" class="filter-chip">iPadOS</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ELEVATION / SURFACES ===== -->
+    <section>
+      <div class="mb-6"><p class="eyebrow text-primary mb-1">07</p><h2 class="text-2xl font-bold tracking-tight">Surfaces &amp; radius</h2></div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="rounded-xl2 bg-bg border border-border p-5 text-sm"><p class="font-semibold">bg</p><p class="text-muted text-xs mt-1">page base</p></div>
+        <div class="rounded-xl2 bg-surface border border-border p-5 text-sm"><p class="font-semibold">surface</p><p class="text-muted text-xs mt-1">cards</p></div>
+        <div class="rounded-xl2 bg-surface2 border border-border p-5 text-sm"><p class="font-semibold">surface2</p><p class="text-muted text-xs mt-1">insets / chips</p></div>
+        <div class="rounded-xl2 bg-primary text-on-primary p-5 text-sm"><p class="font-semibold">primary</p><p class="text-xs mt-1 opacity-80">actions</p></div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="border-t border-border">
+    <div class="mx-auto max-w-content px-5 py-8 flex items-center justify-between text-sm text-muted">
+      <span>AppNest Design System · v0.1</span>
+      <a href="index.html" class="hover:text-text transition-colors eyebrow">← Back to site</a>
+    </div>
+  </footer>
+
+  <style type="text/tailwindcss">
+    @layer components {
+      .filter-chip { @apply shrink-0 h-9 px-4 rounded-full border border-border text-sm font-medium text-muted transition-colors; }
+      .filter-chip[aria-pressed="true"] { @apply bg-primary text-on-primary border-primary; }
+      .filter-chip:hover { @apply bg-surface2; }
+      .filter-chip[aria-pressed="true"]:hover { @apply bg-primary-hover; }
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

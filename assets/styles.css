@@ -1,0 +1,101 @@
+/* ============================================================
+   AppNest — Design System tokens
+   Palette: Porcelain / Baltic Blue / Flag Red / Bright Gold / Shadow Grey
+   Semantic tokens stored as space-separated RGB channels so Tailwind
+   can apply <alpha-value> via rgb(var(--token) / <alpha-value>).
+   ============================================================ */
+
+:root {
+  /* raw brand colors (channels) */
+  --porcelain: 253 255 252;
+  --baltic:    35 87 137;
+  --flag-red:  193 41 46;
+  --gold:      241 211 2;
+  --shadow:    22 25 37;
+
+  /* ---- Light theme (default) ---- */
+  --bg:            253 255 252;  /* Porcelain  */
+  --surface:       255 255 255;
+  --surface-2:     244 246 248;
+  --border:        224 228 233;
+  --text:          22 25 37;     /* Shadow     */
+  --text-muted:    92 100 116;
+  --primary:       35 87 137;    /* Baltic     */
+  --primary-hover: 28 71 113;
+  --on-primary:    253 255 252;
+  --accent-red:    193 41 46;
+  --accent-gold:   241 211 2;
+  --grid-line:     22 25 37;     /* used at very low alpha */
+}
+
+.dark {
+  /* ---- Dark theme ---- */
+  --bg:            22 25 37;     /* Shadow     */
+  --surface:       30 34 49;
+  --surface-2:     38 43 61;
+  --border:        52 58 78;
+  --text:          253 255 252;  /* Porcelain  */
+  --text-muted:    156 163 184;
+  --primary:       92 154 214;   /* lightened Baltic for contrast */
+  --primary-hover: 124 178 230;
+  --on-primary:    13 24 38;
+  --accent-red:    224 78 83;
+  --accent-gold:   241 211 2;
+  --grid-line:     253 255 252;
+}
+
+/* smooth theme transition on the things that change */
+html.theming, html.theming * {
+  transition: background-color .35s ease, border-color .35s ease, color .35s ease;
+}
+
+body {
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---- Blueprint grid backdrop (anime.js-ish) ---- */
+.grid-backdrop {
+  background-image:
+    linear-gradient(to right,  rgb(var(--grid-line) / .06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(var(--grid-line) / .06) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* monospace eyebrow / kicker label */
+.eyebrow {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: .72rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+/* thin ticked rule like the reference site */
+.tick-rule {
+  height: 1px;
+  background: repeating-linear-gradient(to right,
+    rgb(var(--border)) 0 8px, transparent 8px 16px);
+}
+
+/* focus ring */
+.focus-ring:focus-visible {
+  outline: 2px solid rgb(var(--primary));
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* ---- scroll-reveal base state (JS adds .is-in) ---- */
+.reveal { opacity: 0; transform: translateY(18px); }
+.reveal.is-in { opacity: 1; transform: none;
+  transition: opacity .6s cubic-bezier(.22,1,.36,1),
+              transform .6s cubic-bezier(.22,1,.36,1); }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1 !important; transform: none !important; }
+  html.theming, html.theming * { transition: none !important; }
+}
+
+/* hide scrollbar on horizontal filter row */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

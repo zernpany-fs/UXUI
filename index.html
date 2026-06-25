@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AppNest — apps worth your Apple</title>
+  <meta name="description" content="Daily news on the best Mac, iPhone and iPad apps — what's new, what's hot, what's worth your time." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/theme.js"></script>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="bg-bg text-text font-sans antialiased min-h-screen">
+
+  <!-- ============ HEADER ============ -->
+  <header class="sticky top-0 z-50 backdrop-blur bg-bg/80 border-b border-border">
+    <div class="mx-auto max-w-content px-5 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2.5 group">
+        <span class="grid place-items-center w-8 h-8 rounded-lg bg-primary text-on-primary font-mono font-bold text-sm">A</span>
+        <span class="font-bold text-lg tracking-tight">App<span class="text-primary">Nest</span></span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-muted">
+        <a href="#feed" class="hover:text-text transition-colors">News</a>
+        <a href="#" class="hover:text-text transition-colors">macOS</a>
+        <a href="#" class="hover:text-text transition-colors">iOS</a>
+        <a href="#" class="hover:text-text transition-colors">iPadOS</a>
+        <a href="styleguide.html" class="hover:text-text transition-colors">Style&nbsp;Guide</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <button data-theme-toggle aria-label="Toggle theme"
+          class="focus-ring inline-flex items-center gap-2 h-9 px-3 rounded-lg border border-border text-sm font-medium hover:bg-surface2 transition-colors">
+          <svg class="w-4 h-4 hidden dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v2M12 19v2M5 12H3M21 12h-2M6.3 6.3 4.9 4.9M19.1 19.1l-1.4-1.4M17.7 6.3l1.4-1.4M4.9 19.1l1.4-1.4"/><circle cx="12" cy="12" r="4"/></svg>
+          <svg class="w-4 h-4 block dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <span data-theme-label class="hidden sm:inline">Light</span>
+        </button>
+        <a href="#" class="hidden sm:inline-flex items-center h-9 px-4 rounded-lg bg-primary text-on-primary text-sm font-semibold hover:bg-primary-hover transition-colors focus-ring">Subscribe</a>
+        <button data-menu-toggle aria-label="Menu" class="md:hidden focus-ring grid place-items-center w-9 h-9 rounded-lg border border-border">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div data-mobile-menu class="hidden md:hidden border-t border-border bg-surface">
+      <nav class="px-5 py-3 flex flex-col gap-1 text-sm font-medium">
+        <a href="#feed" class="py-2">News</a>
+        <a href="#" class="py-2">macOS</a>
+        <a href="#" class="py-2">iOS</a>
+        <a href="#" class="py-2">iPadOS</a>
+        <a href="styleguide.html" class="py-2">Style Guide</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="relative overflow-hidden border-b border-border">
+      <div class="grid-backdrop absolute inset-0 pointer-events-none"></div>
+      <div class="relative mx-auto max-w-content px-5 py-14 md:py-20">
+        <div class="flex items-center gap-2 mb-5 eyebrow text-muted">
+          <span data-anime-dot class="inline-block w-1.5 h-1.5 rounded-full bg-primary"></span>
+          <span data-anime-dot class="inline-block w-1.5 h-1.5 rounded-full bg-flagred"></span>
+          <span data-anime-dot class="inline-block w-1.5 h-1.5 rounded-full bg-gold"></span>
+          <span data-anime-dot class="ml-2">Wed · Jun 25 2026 · Issue 184</span>
+        </div>
+        <h1 class="reveal text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05] max-w-3xl">
+          Apps worth your <span class="text-primary">Apple.</span>
+        </h1>
+        <p class="reveal text-lg text-muted mt-5 max-w-xl" data-delay="80">
+          Daily, no-fluff coverage of the best new software for Mac, iPhone and iPad —
+          curated by people who actually use it.
+        </p>
+        <div class="reveal mt-8 flex flex-wrap items-center gap-3" data-delay="140">
+          <a href="#feed" class="inline-flex items-center h-11 px-6 rounded-xl bg-primary text-on-primary font-semibold hover:bg-primary-hover transition-colors focus-ring">Read today's picks</a>
+          <a href="styleguide.html" class="inline-flex items-center h-11 px-6 rounded-xl border border-border font-semibold hover:bg-surface2 transition-colors focus-ring">View design system</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEED ============ -->
+    <section id="feed" class="mx-auto max-w-content px-5 py-12 md:py-16">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-7">
+        <div>
+          <p class="eyebrow text-primary mb-1.5">// The feed</p>
+          <h2 class="text-2xl md:text-3xl font-bold tracking-tight">Latest in the ecosystem</h2>
+        </div>
+        <!-- filter chips -->
+        <div data-filter-group class="flex gap-2 overflow-x-auto no-scrollbar -mx-5 px-5 md:mx-0 md:px-0">
+          <button data-filter aria-pressed="true"  class="filter-chip">All</button>
+          <button data-filter aria-pressed="false" class="filter-chip">macOS</button>
+          <button data-filter aria-pressed="false" class="filter-chip">iOS</button>
+          <button data-filter aria-pressed="false" class="filter-chip">iPadOS</button>
+          <button data-filter aria-pressed="false" class="filter-chip">Free</button>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-6">
+        <!-- FEATURED (spans 2) -->
+        <article class="reveal lg:col-span-2 lg:row-span-2 group relative rounded-xl2 border border-border bg-surface overflow-hidden hover:border-primary/50 transition-colors">
+          <div class="relative aspect-[16/9] bg-gradient-to-br from-primary to-shadow grid-backdrop">
+            <span class="absolute top-4 left-4 inline-flex items-center gap-1.5 h-7 px-3 rounded-full bg-gold text-shadow text-xs font-bold eyebrow">★ Editor's pick</span>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 text-xs text-muted mb-3 eyebrow">
+              <span class="text-primary">macOS</span><span>·</span><span>5 min read</span><span>·</span><span>by N. Pany</span>
+            </div>
+            <h3 class="text-2xl font-bold tracking-tight leading-snug group-hover:text-primary transition-colors">
+              Raycast 2.0 turns your Mac launcher into a full workspace OS
+            </h3>
+            <p class="text-muted mt-3 leading-relaxed">
+              The redesign folds AI commands, window management and a script store into one
+              keystroke. We spent a week living in it — here's what actually sticks.
+            </p>
+            <div class="mt-5 flex items-center gap-3 text-sm">
+              <span class="font-mono text-muted">9.4 / 10</span>
+              <span class="tick-rule flex-1"></span>
+              <a href="#" class="font-semibold text-primary hover:underline">Read review →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- BREAKING -->
+        <article class="reveal group rounded-xl2 border border-border bg-surface p-5 hover:border-red/50 transition-colors" data-delay="60">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded-full bg-red/10 text-red text-xs font-bold eyebrow">
+              <span class="w-1.5 h-1.5 rounded-full bg-red animate-pulse-dot"></span>Breaking
+            </span>
+            <span class="text-xs text-muted eyebrow">iOS</span>
+          </div>
+          <h3 class="font-bold text-lg leading-snug group-hover:text-primary transition-colors">
+            Apple opens default-app slots to third-party launchers in iOS 19
+          </h3>
+          <p class="text-sm text-muted mt-2 leading-relaxed">Sideloaded launchers can now own the home screen in the EU and beyond.</p>
+          <p class="text-xs text-muted mt-4 eyebrow">2 hours ago</p>
+        </article>
+
+        <!-- CARD -->
+        <article class="reveal group rounded-xl2 border border-border bg-surface p-5 hover:border-primary/50 transition-colors" data-delay="120">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="grid place-items-center w-10 h-10 rounded-xl bg-surface2 font-mono font-bold text-primary">Go</span>
+            <div>
+              <h3 class="font-bold leading-tight group-hover:text-primary transition-colors">GoodNotes adds infinite canvas</h3>
+              <p class="text-xs text-muted eyebrow mt-0.5">iPadOS · Update</p>
+            </div>
+          </div>
+          <p class="text-sm text-muted leading-relaxed">Pinch-to-zoom whiteboards land for Apple Pencil Pro users this week.</p>
+        </article>
+      </div>
+
+      <!-- secondary row -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
+        <article class="reveal group rounded-xl2 border border-border bg-surface p-5 hover:border-primary/50 transition-colors">
+          <span class="inline-flex h-6 px-2.5 items-center rounded-full bg-surface2 text-xs font-semibold eyebrow text-muted mb-3">Free</span>
+          <h3 class="font-semibold leading-snug group-hover:text-primary transition-colors">NetNewsWire 7 brings reader sync to all platforms</h3>
+          <p class="text-xs text-muted mt-3 eyebrow">macOS · 1d ago</p>
+        </article>
+        <article class="reveal group rounded-xl2 border border-border bg-surface p-5 hover:border-primary/50 transition-colors" data-delay="60">
+          <span class="inline-flex h-6 px-2.5 items-center rounded-full bg-gold/15 text-xs font-semibold eyebrow text-shadow dark:text-gold mb-3">Trending</span>
+          <h3 class="font-semibold leading-snug group-hover:text-primary transition-colors">Things 4 quietly ships a calendar layer</h3>
+          <p class="text-xs text-muted mt-3 eyebrow">iOS · 1d ago</p>
+        </article>
+        <article class="reveal group rounded-xl2 border border-border bg-surface p-5 hover:border-primary/50 transition-colors" data-delay="120">
+          <span class="inline-flex h-6 px-2.5 items-center rounded-full bg-surface2 text-xs font-semibold eyebrow text-muted mb-3">New</span>
+          <h3 class="font-semibold leading-snug group-hover:text-primary transition-colors">Ivory 2 rethinks the timeline for big screens</h3>
+          <p class="text-xs text-muted mt-3 eyebrow">iPadOS · 2d ago</p>
+        </article>
+        <article class="reveal group rounded-xl2 border border-border bg-surface p-5 hover:border-primary/50 transition-colors" data-delay="180">
+          <span class="inline-flex h-6 px-2.5 items-center rounded-full bg-surface2 text-xs font-semibold eyebrow text-muted mb-3">Deal</span>
+          <h3 class="font-semibold leading-snug group-hover:text-primary transition-colors">CleanMyMac drops to 40% for launch week</h3>
+          <p class="text-xs text-muted mt-3 eyebrow">macOS · 2d ago</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ NEWSLETTER ============ -->
+    <section class="border-t border-border bg-surface">
+      <div class="mx-auto max-w-content px-5 py-14">
+        <div class="reveal rounded-xl2 border border-border bg-bg p-8 md:p-10 relative overflow-hidden">
+          <div class="grid-backdrop absolute inset-0 pointer-events-none opacity-60"></div>
+          <div class="relative md:flex items-center justify-between gap-8">
+            <div class="max-w-md">
+              <p class="eyebrow text-primary mb-2">// Stay current</p>
+              <h2 class="text-2xl md:text-3xl font-bold tracking-tight">One email. The week's best apps.</h2>
+              <p class="text-muted mt-2">No spam, no fluff — just what's worth installing.</p>
+            </div>
+            <form class="mt-6 md:mt-0 flex gap-2 w-full md:w-auto" onsubmit="return false">
+              <input type="email" required placeholder="you@icloud.com"
+                class="focus-ring flex-1 md:w-64 h-11 px-4 rounded-xl bg-surface border border-border placeholder:text-muted/70" />
+              <button class="h-11 px-5 rounded-xl bg-primary text-on-primary font-semibold hover:bg-primary-hover transition-colors focus-ring whitespace-nowrap">Join free</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="border-t border-border">
+    <div class="mx-auto max-w-content px-5 py-10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted">
+      <div class="flex items-center gap-2.5">
+        <span class="grid place-items-center w-7 h-7 rounded-lg bg-primary text-on-primary font-mono font-bold text-xs">A</span>
+        <span>© 2026 AppNest — a devNest project</span>
+      </div>
+      <div class="flex gap-6 eyebrow">
+        <a href="styleguide.html" class="hover:text-text transition-colors">Style Guide</a>
+        <a href="#" class="hover:text-text transition-colors">About</a>
+        <a href="#" class="hover:text-text transition-colors">RSS</a>
+      </div>
+    </div>
+  </footer>
+
+  <style type="text/tailwindcss">
+    @layer components {
+      .filter-chip {
+        @apply shrink-0 h-9 px-4 rounded-full border border-border text-sm font-medium text-muted transition-colors whitespace-nowrap;
+      }
+      .filter-chip[aria-pressed="true"] {
+        @apply bg-primary text-on-primary border-primary;
+      }
+      .filter-chip:hover { @apply bg-surface2; }
+      .filter-chip[aria-pressed="true"]:hover { @apply bg-primary-hover; }
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
