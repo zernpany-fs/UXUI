@@ -180,6 +180,37 @@
         <div class="rounded-xl2 bg-primary text-on-primary p-5 text-sm"><p class="font-semibold">primary</p><p class="text-xs mt-1 opacity-80">actions</p></div>
       </div>
     </section>
+
+    <!-- ===== BOOKMARK & TOAST ===== -->
+    <section>
+      <div class="mb-6"><p class="eyebrow text-primary mb-1">08</p><h2 class="text-2xl font-bold tracking-tight">Bookmark &amp; toast</h2></div>
+      <div class="rounded-xl2 border border-border bg-surface p-6">
+        <div class="flex flex-wrap items-center gap-4">
+          <button data-bookmark data-id="demo-styleguide" data-title="Demo bookmark from the style guide" data-category="Demo" data-meta="Sample" data-href="saved.html" aria-label="Save" class="bookmark-btn"></button>
+          <button data-bookmark data-with-label data-id="demo-styleguide" data-title="Demo bookmark from the style guide" data-category="Demo" data-meta="Sample" data-href="saved.html" aria-label="Save" class="bookmark-btn bookmark-btn--wide max-w-[180px]"></button>
+          <button id="toast-demo" class="h-11 px-5 rounded-xl border border-border font-semibold hover:bg-surface2 transition-colors focus-ring">Trigger toast</button>
+        </div>
+        <p class="text-sm text-muted mt-4">Bookmarks persist to <code class="font-mono text-primary">localStorage</code> and sync across pages — try it, then open <a href="saved.html" class="text-primary hover:underline font-medium">Saved</a>. Both buttons above share one id, so they toggle together.</p>
+      </div>
+    </section>
+
+    <!-- ===== AUTH FIELDS ===== -->
+    <section>
+      <div class="mb-6"><p class="eyebrow text-primary mb-1">09</p><h2 class="text-2xl font-bold tracking-tight">Auth &amp; account</h2></div>
+      <div class="rounded-xl2 border border-border bg-surface p-6 max-w-md">
+        <div class="grid grid-cols-2 p-1 rounded-xl bg-surface2 mb-5 text-sm font-semibold">
+          <span class="h-9 grid place-items-center rounded-lg bg-surface text-text shadow-sm">Log in</span>
+          <span class="h-9 grid place-items-center rounded-lg text-muted">Register</span>
+        </div>
+        <button class="w-full h-11 inline-flex items-center justify-center gap-2.5 rounded-xl border border-border font-semibold hover:bg-surface2 transition-colors focus-ring mb-4">
+          <span class="font-mono font-bold text-primary">G</span> Continue with Google
+        </button>
+        <label class="eyebrow text-muted block mb-2">Email</label>
+        <input type="email" placeholder="you@icloud.com" class="focus-ring w-full h-11 px-4 rounded-xl bg-bg border border-border placeholder:text-muted/70 mb-4" />
+        <button class="w-full h-11 rounded-xl bg-primary text-on-primary font-semibold hover:bg-primary-hover transition-colors focus-ring">Log in</button>
+        <p class="text-xs text-muted mt-3">Full flows: <a href="login.html" class="text-primary hover:underline">login.html</a> · <a href="register.html" class="text-primary hover:underline">register.html</a></p>
+      </div>
+    </section>
   </div>
 
   <footer class="border-t border-border">
@@ -189,16 +220,12 @@
     </div>
   </footer>
 
-  <style type="text/tailwindcss">
-    @layer components {
-      .filter-chip { @apply shrink-0 h-9 px-4 rounded-full border border-border text-sm font-medium text-muted transition-colors; }
-      .filter-chip[aria-pressed="true"] { @apply bg-primary text-on-primary border-primary; }
-      .filter-chip:hover { @apply bg-surface2; }
-      .filter-chip[aria-pressed="true"]:hover { @apply bg-primary-hover; }
-    }
-  </style>
-
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="assets/bookmarks.js"></script>
   <script src="assets/app.js"></script>
+  <script>
+    document.getElementById("toast-demo").addEventListener("click", () =>
+      window.AppNestBookmarks.toast("This is a toast notification"));
+  </script>
 </body>
 </html>

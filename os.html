@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Top apps — AppNest</title>
+  <meta name="description" content="The top apps for macOS, iOS and iPadOS — ranked and curated by AppNest." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/theme.js"></script>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="bg-bg text-text font-sans antialiased min-h-screen">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 backdrop-blur bg-bg/80 border-b border-border">
+    <div class="mx-auto max-w-content px-5 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2.5">
+        <span class="grid place-items-center w-8 h-8 rounded-lg bg-primary text-on-primary font-mono font-bold text-sm">A</span>
+        <span class="font-bold text-lg tracking-tight">App<span class="text-primary">Nest</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-muted">
+        <a href="index.html#feed" class="hover:text-text transition-colors">News</a>
+        <a href="os.html?os=macos"  data-os-link="macos"  class="hover:text-text transition-colors">macOS</a>
+        <a href="os.html?os=ios"    data-os-link="ios"    class="hover:text-text transition-colors">iOS</a>
+        <a href="os.html?os=ipados" data-os-link="ipados" class="hover:text-text transition-colors">iPadOS</a>
+        <a href="styleguide.html" class="hover:text-text transition-colors">Style&nbsp;Guide</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <button data-theme-toggle aria-label="Toggle theme" class="focus-ring inline-flex items-center gap-2 h-9 px-3 rounded-lg border border-border text-sm font-medium hover:bg-surface2 transition-colors">
+          <svg class="w-4 h-4 hidden dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v2M12 19v2M5 12H3M21 12h-2M6.3 6.3 4.9 4.9M19.1 19.1l-1.4-1.4M17.7 6.3l1.4-1.4M4.9 19.1l1.4-1.4"/><circle cx="12" cy="12" r="4"/></svg>
+          <svg class="w-4 h-4 block dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <span data-theme-label class="hidden sm:inline">Light</span>
+        </button>
+        <a href="saved.html" aria-label="Saved apps" class="relative focus-ring grid place-items-center w-9 h-9 rounded-lg border border-border hover:bg-surface2 transition-colors">
+          <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4h12a1 1 0 0 1 1 1v15l-7-4-7 4V5a1 1 0 0 1 1-1Z"/></svg>
+          <span data-bookmark-count class="hidden absolute -top-1.5 -right-1.5 min-w-[18px] h-[18px] px-1 grid place-items-center rounded-full bg-primary text-on-primary text-[10px] font-bold leading-none">0</span>
+        </a>
+        <a href="login.html" class="hidden sm:inline-flex items-center h-9 px-4 rounded-lg bg-primary text-on-primary text-sm font-semibold hover:bg-primary-hover transition-colors focus-ring">Log in</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="relative overflow-hidden border-b border-border">
+      <div class="grid-backdrop absolute inset-0 pointer-events-none"></div>
+      <div class="relative mx-auto max-w-content px-5 py-12 md:py-16">
+        <div class="flex items-center gap-2 eyebrow text-muted mb-5">
+          <span data-anime-dot class="inline-block w-1.5 h-1.5 rounded-full bg-primary"></span>
+          <span data-anime-dot class="inline-block w-1.5 h-1.5 rounded-full bg-red"></span>
+          <span data-anime-dot class="inline-block w-1.5 h-1.5 rounded-full bg-charcoal dark:bg-ivory"></span>
+          <a data-anime-dot href="index.html" class="ml-2 hover:text-text transition-colors">Home</a>
+          <span data-anime-dot>/</span>
+          <span data-anime-dot class="text-primary">Top apps</span>
+        </div>
+        <p class="reveal eyebrow text-primary mb-3">// <span data-os-count>0</span> hand-picked</p>
+        <h1 class="reveal text-4xl md:text-5xl font-extrabold tracking-tight" data-delay="60">
+          Best <span data-os-name class="text-primary">macOS</span> apps
+        </h1>
+        <p data-os-tagline class="reveal text-lg text-muted mt-4 max-w-xl" data-delay="120">…</p>
+
+        <!-- OS switch -->
+        <div class="reveal mt-7 inline-flex p-1 rounded-xl bg-surface2 border border-border text-sm font-semibold" data-delay="180">
+          <a href="os.html?os=macos"  data-os-link="macos"  class="os-seg h-9 px-4 grid place-items-center rounded-lg transition-colors">macOS</a>
+          <a href="os.html?os=ios"    data-os-link="ios"    class="os-seg h-9 px-4 grid place-items-center rounded-lg transition-colors">iOS</a>
+          <a href="os.html?os=ipados" data-os-link="ipados" class="os-seg h-9 px-4 grid place-items-center rounded-lg transition-colors">iPadOS</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIST -->
+    <section class="mx-auto max-w-content px-5 py-10 md:py-12">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-7">
+        <h2 class="text-2xl font-bold tracking-tight">The ranking</h2>
+        <div data-os-filters class="flex gap-2 overflow-x-auto no-scrollbar -mx-5 px-5 sm:mx-0 sm:px-0"></div>
+      </div>
+      <div data-os-list class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-border">
+    <div class="mx-auto max-w-content px-5 py-10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted">
+      <div class="flex items-center gap-2.5">
+        <span class="grid place-items-center w-7 h-7 rounded-lg bg-primary text-on-primary font-mono font-bold text-xs">A</span>
+        <span>© 2026 AppNest — a devNest project</span>
+      </div>
+      <div class="flex gap-6 eyebrow">
+        <a href="styleguide.html" class="hover:text-text transition-colors">Style Guide</a>
+        <a href="saved.html" class="hover:text-text transition-colors">Saved</a>
+        <a href="index.html" class="hover:text-text transition-colors">Home</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="assets/bookmarks.js"></script>
+  <script src="assets/apps.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

@@ -2,7 +2,19 @@
   "permissions": {
     "allow": [
       "Bash(open index.html)",
-      "Bash(open index.html styleguide.html)"
+      "Bash(open index.html styleguide.html)",
+      "Bash(open article.html)",
+      "Bash(open index.html article.html saved.html login.html register.html styleguide.html)",
+      "Bash(open \"os.html?os=macos\" \"os.html?os=ios\" \"os.html?os=ipados\")",
+      "Bash(open os.html)",
+      "Bash(open file:///Users/zern/Desktop/devNestWorkShop/UX:UX/os.html?os=ios)",
+      "Bash(open file:///Users/zern/Desktop/devNestWorkShop/UX:UX/os.html?os=ipados)",
+      "Bash(cd \"/Users/zern/.claude/projects/-Users-zern-Desktop-devNestWorkShop-UX-UX/memory\")",
+      "Bash(ls)",
+      "Bash(cat MEMORY.md)",
+      "Bash(curl -sS -o /dev/null -w \"tailwind cdn: HTTP %{http_code}, %{size_download} bytes\\\\n\" https://cdn.tailwindcss.com)",
+      "Bash(open __TRACKED_VAR__/os.html?os=macos)",
+      "Bash(open __TRACKED_VAR__/index.html)"
     ]
   }
 }

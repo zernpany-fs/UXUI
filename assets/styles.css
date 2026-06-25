@@ -97,3 +97,95 @@ body {
 /* hide scrollbar on horizontal filter row */
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ---- filter chips (category / OS filter rows) — plain CSS so pages
+   don't depend on runtime @apply compilation ---- */
+.filter-chip {
+  flex-shrink: 0; height: 2.25rem; padding: 0 1rem;
+  border-radius: 9999px; border: 1px solid rgb(var(--border));
+  font-size: .875rem; font-weight: 500; color: rgb(var(--text-muted));
+  white-space: nowrap; background: transparent; cursor: pointer;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+.filter-chip:hover { background: rgb(var(--surface-2)); }
+.filter-chip[aria-pressed="true"] {
+  background: rgb(var(--primary)); color: rgb(var(--on-primary)); border-color: rgb(var(--primary));
+}
+.filter-chip[aria-pressed="true"]:hover { background: rgb(var(--primary-hover)); }
+
+/* OS segmented switch — active pill (apps.js toggles .text-text) */
+.os-seg.text-text { background: rgb(var(--surface)); box-shadow: 0 1px 2px rgb(0 0 0 / .07); }
+
+/* ---- bookmark button ---- */
+.bookmark-btn {
+  display: inline-grid; place-items: center;
+  width: 2.25rem; height: 2.25rem; border-radius: .65rem;
+  border: 1px solid rgb(var(--border)); color: rgb(var(--text-muted));
+  background: rgb(var(--surface)); transition: all .2s ease; cursor: pointer;
+}
+.bookmark-btn:hover { background: rgb(var(--surface-2)); color: rgb(var(--text)); }
+.bookmark-btn[aria-pressed="true"] {
+  color: rgb(var(--primary));
+  border-color: rgb(var(--primary) / .5);
+  background: rgb(var(--primary) / .1);
+}
+.bookmark-btn--wide {
+  width: 100%; height: 2.75rem; padding: 0 1rem;
+  border-radius: .9rem; font-weight: 600; font-size: .95rem;
+}
+.bookmark-btn .bm-filled { display: none; }
+.bookmark-btn[aria-pressed="true"] .bm-filled { display: block; }
+.bookmark-btn[aria-pressed="true"] .bm-outline { display: none; }
+/* little pop when toggled on */
+.bookmark-btn[aria-pressed="true"] .bm-filled { animation: bm-pop .3s ease; }
+@keyframes bm-pop { 0% { transform: scale(.6); } 60% { transform: scale(1.15); } 100% { transform: scale(1); } }
+
+/* ---- toast ---- */
+.toast-host {
+  position: fixed; left: 50%; bottom: 1.5rem; transform: translateX(-50%);
+  z-index: 80; display: flex; flex-direction: column-reverse; gap: .5rem;
+  align-items: center; pointer-events: none;
+}
+.toast {
+  background: rgb(var(--text)); color: rgb(var(--bg));
+  padding: .65rem 1.1rem; border-radius: .8rem;
+  font-size: .875rem; font-weight: 500; white-space: nowrap;
+  box-shadow: 0 10px 34px rgb(0 0 0 / .28);
+  opacity: 0; transform: translateY(10px);
+  transition: opacity .3s cubic-bezier(.22,1,.36,1), transform .3s cubic-bezier(.22,1,.36,1);
+}
+.toast.is-in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .bookmark-btn[aria-pressed="true"] .bm-filled { animation: none; }
+}
+
+/* ---- reading progress bar ---- */
+.progress-bar {
+  position: fixed; top: 0; left: 0; height: 3px; width: 0;
+  background: rgb(var(--primary)); z-index: 60;
+  transition: width .1s linear;
+}
+
+/* ---- long-form article body ---- */
+.article-body { font-size: 1.075rem; line-height: 1.75; }
+.article-body > * + * { margin-top: 1.3rem; }
+.article-body p, .article-body li { color: rgb(var(--text) / .82); }
+.article-body strong { color: rgb(var(--text)); font-weight: 600; }
+.article-body a { color: rgb(var(--primary)); text-decoration: underline; text-underline-offset: 3px; }
+.article-body h2 { font-size: 1.6rem; font-weight: 700; letter-spacing: -.01em; margin-top: 2.75rem; }
+.article-body h3 { font-size: 1.2rem; font-weight: 700; margin-top: 2.25rem; }
+.article-body ul { list-style: disc; padding-left: 1.4rem; }
+.article-body ul li::marker { color: rgb(var(--primary)); }
+.article-body blockquote {
+  border-left: 3px solid rgb(var(--primary));
+  padding: .25rem 0 .25rem 1.4rem;
+  font-size: 1.35rem; font-weight: 500; line-height: 1.5;
+  color: rgb(var(--text));
+}
+.article-body figure { margin-top: 2rem; }
+.article-body figcaption {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: .78rem; color: rgb(var(--text-muted));
+  margin-top: .6rem; letter-spacing: .02em;
+}

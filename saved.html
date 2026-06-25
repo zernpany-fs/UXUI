@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Saved apps — AppNest</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/theme.js"></script>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="bg-bg text-text font-sans antialiased min-h-screen">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 backdrop-blur bg-bg/80 border-b border-border">
+    <div class="mx-auto max-w-content px-5 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2.5">
+        <span class="grid place-items-center w-8 h-8 rounded-lg bg-primary text-on-primary font-mono font-bold text-sm">A</span>
+        <span class="font-bold text-lg tracking-tight">App<span class="text-primary">Nest</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-muted">
+        <a href="index.html#feed" class="hover:text-text transition-colors">News</a>
+        <a href="os.html?os=macos" class="hover:text-text transition-colors">macOS</a>
+        <a href="os.html?os=ios" class="hover:text-text transition-colors">iOS</a>
+        <a href="os.html?os=ipados" class="hover:text-text transition-colors">iPadOS</a>
+        <a href="saved.html" class="text-text">Saved</a>
+        <a href="styleguide.html" class="hover:text-text transition-colors">Style&nbsp;Guide</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <button data-theme-toggle aria-label="Toggle theme"
+          class="focus-ring inline-flex items-center gap-2 h-9 px-3 rounded-lg border border-border text-sm font-medium hover:bg-surface2 transition-colors">
+          <svg class="w-4 h-4 hidden dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v2M12 19v2M5 12H3M21 12h-2M6.3 6.3 4.9 4.9M19.1 19.1l-1.4-1.4M17.7 6.3l1.4-1.4M4.9 19.1l1.4-1.4"/><circle cx="12" cy="12" r="4"/></svg>
+          <svg class="w-4 h-4 block dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <span data-theme-label class="hidden sm:inline">Light</span>
+        </button>
+        <a href="login.html" class="hidden sm:inline-flex items-center h-9 px-4 rounded-lg bg-primary text-on-primary text-sm font-semibold hover:bg-primary-hover transition-colors focus-ring">Log in</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden border-b border-border">
+    <div class="grid-backdrop absolute inset-0 pointer-events-none"></div>
+    <div class="relative mx-auto max-w-content px-5 py-12 md:py-14">
+      <div class="flex items-end justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-2 eyebrow text-muted mb-4">
+            <span data-anime-dot class="inline-block w-1.5 h-1.5 rounded-full bg-primary"></span>
+            <span data-anime-dot class="inline-block w-1.5 h-1.5 rounded-full bg-red"></span>
+            <span data-anime-dot class="inline-block w-1.5 h-1.5 rounded-full bg-charcoal dark:bg-ivory"></span>
+            <span data-anime-dot class="ml-2 text-primary">// Your library</span>
+          </div>
+          <h1 class="reveal text-3xl md:text-5xl font-extrabold tracking-tight">
+            Saved apps <span class="text-muted font-bold">(<span data-saved-total>0</span>)</span>
+          </h1>
+          <p class="reveal text-muted mt-3 max-w-lg" data-delay="80">Apps and stories you've bookmarked to check out later — synced on this device.</p>
+        </div>
+        <a href="index.html#feed" class="reveal hidden sm:inline-flex items-center h-10 px-5 rounded-xl border border-border font-semibold hover:bg-surface2 transition-colors focus-ring" data-delay="140">Browse news</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="mx-auto max-w-content px-5 py-12">
+    <!-- list (rendered from localStorage) -->
+    <div data-saved-list class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+
+    <!-- empty state -->
+    <div data-saved-empty class="hidden">
+      <div class="rounded-xl2 border border-dashed border-border bg-surface/50 py-16 px-6 text-center">
+        <div class="mx-auto w-14 h-14 rounded-2xl bg-surface2 grid place-items-center mb-5">
+          <svg class="w-7 h-7 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 4h12a1 1 0 0 1 1 1v15l-7-4-7 4V5a1 1 0 0 1 1-1Z"/></svg>
+        </div>
+        <h2 class="text-xl font-bold">Nothing saved yet</h2>
+        <p class="text-muted mt-2 max-w-sm mx-auto">Tap the bookmark icon on any app or story and it'll show up here — synced on this device.</p>
+        <a href="index.html#feed" class="mt-6 inline-flex items-center h-11 px-6 rounded-xl bg-primary text-on-primary font-semibold hover:bg-primary-hover transition-colors focus-ring">Find apps to save</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-border mt-8">
+    <div class="mx-auto max-w-content px-5 py-10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted">
+      <div class="flex items-center gap-2.5">
+        <span class="grid place-items-center w-7 h-7 rounded-lg bg-primary text-on-primary font-mono font-bold text-xs">A</span>
+        <span>© 2026 AppNest — a devNest project</span>
+      </div>
+      <div class="flex gap-6 eyebrow">
+        <a href="styleguide.html" class="hover:text-text transition-colors">Style Guide</a>
+        <a href="index.html" class="hover:text-text transition-colors">Home</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="assets/bookmarks.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Raycast 2.0 review — AppNest</title>
+  <meta name="description" content="Raycast 2.0 turns your Mac launcher into a full workspace OS. Our week-long hands-on review." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/theme.js"></script>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="bg-bg text-text font-sans antialiased min-h-screen">
+
+  <div data-progress-bar class="progress-bar"></div>
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 backdrop-blur bg-bg/80 border-b border-border">
+    <div class="mx-auto max-w-content px-5 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2.5">
+        <span class="grid place-items-center w-8 h-8 rounded-lg bg-primary text-on-primary font-mono font-bold text-sm">A</span>
+        <span class="font-bold text-lg tracking-tight">App<span class="text-primary">Nest</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-muted">
+        <a href="index.html#feed" class="hover:text-text transition-colors">News</a>
+        <a href="os.html?os=macos" class="hover:text-text transition-colors">macOS</a>
+        <a href="os.html?os=ios" class="hover:text-text transition-colors">iOS</a>
+        <a href="os.html?os=ipados" class="hover:text-text transition-colors">iPadOS</a>
+        <a href="styleguide.html" class="hover:text-text transition-colors">Style&nbsp;Guide</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <button data-theme-toggle aria-label="Toggle theme"
+          class="focus-ring inline-flex items-center gap-2 h-9 px-3 rounded-lg border border-border text-sm font-medium hover:bg-surface2 transition-colors">
+          <svg class="w-4 h-4 hidden dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v2M12 19v2M5 12H3M21 12h-2M6.3 6.3 4.9 4.9M19.1 19.1l-1.4-1.4M17.7 6.3l1.4-1.4M4.9 19.1l1.4-1.4"/><circle cx="12" cy="12" r="4"/></svg>
+          <svg class="w-4 h-4 block dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <span data-theme-label class="hidden sm:inline">Light</span>
+        </button>
+        <a href="saved.html" aria-label="Saved apps" class="relative focus-ring grid place-items-center w-9 h-9 rounded-lg border border-border hover:bg-surface2 transition-colors">
+          <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4h12a1 1 0 0 1 1 1v15l-7-4-7 4V5a1 1 0 0 1 1-1Z"/></svg>
+          <span data-bookmark-count class="hidden absolute -top-1.5 -right-1.5 min-w-[18px] h-[18px] px-1 grid place-items-center rounded-full bg-primary text-on-primary text-[10px] font-bold leading-none">0</span>
+        </a>
+        <a href="login.html" class="hidden sm:inline-flex items-center h-9 px-4 rounded-lg bg-primary text-on-primary text-sm font-semibold hover:bg-primary-hover transition-colors focus-ring">Log in</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ARTICLE HEADER -->
+    <div class="relative overflow-hidden border-b border-border">
+      <div class="grid-backdrop absolute inset-0 pointer-events-none"></div>
+      <div class="relative mx-auto max-w-3xl px-5 pt-10 pb-8">
+        <nav class="flex items-center gap-2 eyebrow text-muted mb-5">
+          <a href="index.html" class="hover:text-text transition-colors">Home</a>
+          <span>/</span>
+          <a href="#" class="text-primary hover:underline">macOS</a>
+          <span>/</span>
+          <span>Review</span>
+        </nav>
+        <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-[1.08]">
+          Raycast 2.0 turns your Mac launcher into a full workspace OS
+        </h1>
+        <p class="text-lg md:text-xl text-muted mt-5 leading-relaxed">
+          The redesign folds AI commands, window management and a script store into one
+          keystroke. We spent a week living in it — here's what actually sticks.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-3 mt-7">
+          <div class="flex items-center gap-3">
+            <span class="grid place-items-center w-10 h-10 rounded-full bg-primary text-on-primary font-bold">N</span>
+            <div class="leading-tight">
+              <p class="font-semibold text-sm">Nest Pany</p>
+              <p class="eyebrow text-muted mt-0.5">Senior editor</p>
+            </div>
+          </div>
+          <span class="hidden sm:block w-px h-8 bg-border"></span>
+          <div class="eyebrow text-muted flex flex-wrap items-center gap-x-3 gap-y-1">
+            <span>Jun 25 2026</span><span>·</span><span>5 min read</span><span>·</span>
+            <span class="inline-flex items-center gap-1.5 text-primary">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>9.4 / 10
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COVER -->
+    <div class="mx-auto max-w-content px-5">
+      <figure class="-mt-0 mb-2">
+        <div class="reveal aspect-[16/7] rounded-xl2 border border-border bg-gradient-to-br from-primary to-shadow grid-backdrop mt-8 grid place-items-center">
+          <span class="eyebrow text-white/70">app screenshot · 1600 × 700</span>
+        </div>
+        <figcaption class="px-1">Raycast 2.0's new command palette running on macOS 16.</figcaption>
+      </figure>
+    </div>
+
+    <!-- BODY + SIDEBAR -->
+    <div class="mx-auto max-w-content px-5 py-10 grid lg:grid-cols-12 gap-10">
+      <!-- main column -->
+      <article class="lg:col-span-8 article-body">
+        <p><strong>Raycast started life as a Spotlight replacement</strong>, a fast little launcher that power users kept in muscle memory. Version 2.0 is something bigger: an attempt to make the launcher the place where your whole workflow begins and, increasingly, ends.</p>
+        <p>After a week of forcing myself to reach for Raycast before anything else, the pitch mostly holds up. There are rough edges — and a pricing question we'll get to — but the core idea is sound, and occasionally it feels like magic.</p>
+
+        <h2>What's new in 2.0</h2>
+        <p>The headline change is <a href="#">AI Commands</a>: natural-language actions you trigger inline without leaving the bar. Ask it to rename a batch of files, summarize the clipboard, or draft a reply and it routes through your model of choice.</p>
+        <ul>
+          <li><strong>Window management</strong> baked in — no more separate Rectangle install.</li>
+          <li><strong>Script store</strong> with one-click install and per-command hotkeys.</li>
+          <li><strong>Cloud sync</strong> for snippets, quicklinks and aliases across Macs.</li>
+        </ul>
+
+        <blockquote>For the first time, the launcher feels less like a search box and more like a command line you'd actually want to use.</blockquote>
+
+        <h2>Living with it for a week</h2>
+        <p>The window management alone justified the switch for me. Half-screen snapping, throwing windows across displays, and restoring layouts after a dock/undock are all a keystroke away. It's not novel — but having it <em>inside</em> the launcher removes a whole category of context switching.</p>
+        <p>AI Commands are more hit-and-miss. When they work, they're a genuine accelerator. When the model stalls, you feel every millisecond, because the rest of Raycast is so fast.</p>
+
+        <figure>
+          <div class="aspect-[16/9] rounded-xl2 border border-border bg-surface2 grid-backdrop grid place-items-center">
+            <span class="eyebrow text-muted">window snapping demo · gif</span>
+          </div>
+          <figcaption>Snap layouts restore automatically after re-docking.</figcaption>
+        </figure>
+
+        <h2>The catch: pricing</h2>
+        <p>The core app stays free. AI Commands and cloud sync sit behind <strong>Raycast Pro</strong> at $8/month. For heavy users that's easy math; for casual launcher fans it reframes a free tool as a subscription — and that will rub some people the wrong way.</p>
+
+        <h3>Verdict</h3>
+        <p>Raycast 2.0 is the rare update that earns the version bump. If you live on a Mac keyboard, it's an easy recommendation — just go in knowing the best parts are paid.</p>
+
+        <!-- author card -->
+        <div class="not-prose mt-12 rounded-xl2 border border-border bg-surface p-5 flex items-start gap-4">
+          <span class="grid place-items-center w-12 h-12 rounded-full bg-primary text-on-primary font-bold shrink-0">N</span>
+          <div>
+            <p class="font-semibold">Nest Pany</p>
+            <p class="text-sm text-muted mt-1">Senior editor at AppNest. Covers Mac productivity, automation and the apps that quietly run your day.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- sidebar -->
+      <aside class="lg:col-span-4">
+        <div class="lg:sticky lg:top-24 space-y-6">
+          <!-- app card -->
+          <div class="rounded-xl2 border border-border bg-surface p-5">
+            <div class="flex items-center gap-3">
+              <span class="grid place-items-center w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-shadow font-mono font-bold text-white text-lg">R</span>
+              <div>
+                <h2 class="font-bold leading-tight">Raycast</h2>
+                <p class="eyebrow text-muted mt-0.5">Raycast Technologies</p>
+              </div>
+            </div>
+
+            <div class="flex items-end gap-2 mt-5">
+              <span class="text-4xl font-extrabold tracking-tight">9.4</span>
+              <span class="text-muted mb-1.5 text-sm">/ 10</span>
+              <div class="ml-auto flex gap-0.5 text-primary" aria-label="9.4 out of 10">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span class="text-muted">★</span>
+              </div>
+            </div>
+
+            <dl class="mt-5 text-sm divide-y divide-border">
+              <div class="flex justify-between py-2.5"><dt class="text-muted">Platform</dt><dd class="font-medium">macOS 13+</dd></div>
+              <div class="flex justify-between py-2.5"><dt class="text-muted">Category</dt><dd class="font-medium">Productivity</dd></div>
+              <div class="flex justify-between py-2.5"><dt class="text-muted">Price</dt><dd class="font-medium">Free · Pro $8/mo</dd></div>
+              <div class="flex justify-between py-2.5"><dt class="text-muted">Version</dt><dd class="font-medium font-mono">2.0.1</dd></div>
+            </dl>
+
+            <a href="#" class="mt-5 w-full h-11 inline-flex items-center justify-center rounded-xl bg-primary text-on-primary font-semibold hover:bg-primary-hover transition-colors focus-ring">Get on App Store</a>
+            <button data-bookmark data-with-label data-id="raycast-2" data-title="Raycast 2.0 turns your Mac launcher into a full workspace OS" data-category="macOS" data-meta="Review" data-href="article.html" aria-label="Save app" class="bookmark-btn bookmark-btn--wide mt-2.5"></button>
+          </div>
+
+          <!-- pros / cons -->
+          <div class="rounded-xl2 border border-border bg-surface p-5">
+            <p class="eyebrow text-primary mb-3">// The verdict</p>
+            <ul class="space-y-2.5 text-sm">
+              <li class="flex gap-2.5"><span class="text-primary font-bold">+</span><span>Window management is built in</span></li>
+              <li class="flex gap-2.5"><span class="text-primary font-bold">+</span><span>AI Commands genuinely speed things up</span></li>
+              <li class="flex gap-2.5"><span class="text-primary font-bold">+</span><span>Blazing fast, syncs across Macs</span></li>
+              <li class="flex gap-2.5"><span class="text-red font-bold">−</span><span>Best features need the Pro subscription</span></li>
+            </ul>
+          </div>
+
+          <!-- share -->
+          <div class="rounded-xl2 border border-border bg-surface p-5">
+            <p class="eyebrow text-muted mb-3">// Share</p>
+            <div class="flex gap-2">
+              <button class="flex-1 h-9 rounded-lg border border-border text-sm font-medium hover:bg-surface2 transition-colors focus-ring">Copy link</button>
+              <button class="flex-1 h-9 rounded-lg border border-border text-sm font-medium hover:bg-surface2 transition-colors focus-ring">X</button>
+              <button class="flex-1 h-9 rounded-lg border border-border text-sm font-medium hover:bg-surface2 transition-colors focus-ring">Mail</button>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- RELATED -->
+    <section class="border-t border-border">
+      <div class="mx-auto max-w-content px-5 py-12">
+        <div class="flex items-end justify-between mb-7">
+          <div><p class="eyebrow text-primary mb-1.5">// Keep reading</p><h2 class="text-2xl font-bold tracking-tight">Related stories</h2></div>
+          <a href="index.html#feed" class="text-sm font-semibold text-primary hover:underline">All news →</a>
+        </div>
+        <div class="grid sm:grid-cols-3 gap-6">
+          <a href="article.html" class="reveal group rounded-xl2 border border-border bg-surface p-5 hover:border-primary/50 transition-colors">
+            <p class="eyebrow text-muted mb-2">macOS · 4 min</p>
+            <h3 class="font-bold leading-snug group-hover:text-primary transition-colors">Alfred 6 answers Raycast with a workflow marketplace</h3>
+          </a>
+          <a href="article.html" class="reveal group rounded-xl2 border border-border bg-surface p-5 hover:border-primary/50 transition-colors" data-delay="60">
+            <p class="eyebrow text-muted mb-2">iOS · 3 min</p>
+            <h3 class="font-bold leading-snug group-hover:text-primary transition-colors">Shortcuts finally gets a real automation history</h3>
+          </a>
+          <a href="article.html" class="reveal group rounded-xl2 border border-border bg-surface p-5 hover:border-primary/50 transition-colors" data-delay="120">
+            <p class="eyebrow text-muted mb-2">macOS · 6 min</p>
+            <h3 class="font-bold leading-snug group-hover:text-primary transition-colors">The best free menu-bar apps for your Mac in 2026</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-border">
+    <div class="mx-auto max-w-content px-5 py-10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted">
+      <div class="flex items-center gap-2.5">
+        <span class="grid place-items-center w-7 h-7 rounded-lg bg-primary text-on-primary font-mono font-bold text-xs">A</span>
+        <span>© 2026 AppNest — a devNest project</span>
+      </div>
+      <div class="flex gap-6 eyebrow">
+        <a href="styleguide.html" class="hover:text-text transition-colors">Style Guide</a>
+        <a href="#" class="hover:text-text transition-colors">About</a>
+        <a href="#" class="hover:text-text transition-colors">RSS</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="assets/bookmarks.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

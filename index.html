@@ -26,9 +26,9 @@
 
       <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-muted">
         <a href="#feed" class="hover:text-text transition-colors">News</a>
-        <a href="#" class="hover:text-text transition-colors">macOS</a>
-        <a href="#" class="hover:text-text transition-colors">iOS</a>
-        <a href="#" class="hover:text-text transition-colors">iPadOS</a>
+        <a href="os.html?os=macos" class="hover:text-text transition-colors">macOS</a>
+        <a href="os.html?os=ios" class="hover:text-text transition-colors">iOS</a>
+        <a href="os.html?os=ipados" class="hover:text-text transition-colors">iPadOS</a>
         <a href="styleguide.html" class="hover:text-text transition-colors">Style&nbsp;Guide</a>
       </nav>
 
@@ -39,7 +39,11 @@
           <svg class="w-4 h-4 block dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
           <span data-theme-label class="hidden sm:inline">Light</span>
         </button>
-        <a href="#" class="hidden sm:inline-flex items-center h-9 px-4 rounded-lg bg-primary text-on-primary text-sm font-semibold hover:bg-primary-hover transition-colors focus-ring">Subscribe</a>
+        <a href="saved.html" aria-label="Saved apps" class="relative focus-ring grid place-items-center w-9 h-9 rounded-lg border border-border hover:bg-surface2 transition-colors">
+          <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4h12a1 1 0 0 1 1 1v15l-7-4-7 4V5a1 1 0 0 1 1-1Z"/></svg>
+          <span data-bookmark-count class="hidden absolute -top-1.5 -right-1.5 min-w-[18px] h-[18px] px-1 grid place-items-center rounded-full bg-primary text-on-primary text-[10px] font-bold leading-none">0</span>
+        </a>
+        <a href="login.html" class="hidden sm:inline-flex items-center h-9 px-4 rounded-lg bg-primary text-on-primary text-sm font-semibold hover:bg-primary-hover transition-colors focus-ring">Log in</a>
         <button data-menu-toggle aria-label="Menu" class="md:hidden focus-ring grid place-items-center w-9 h-9 rounded-lg border border-border">
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
@@ -48,10 +52,12 @@
     <div data-mobile-menu class="hidden md:hidden border-t border-border bg-surface">
       <nav class="px-5 py-3 flex flex-col gap-1 text-sm font-medium">
         <a href="#feed" class="py-2">News</a>
-        <a href="#" class="py-2">macOS</a>
-        <a href="#" class="py-2">iOS</a>
-        <a href="#" class="py-2">iPadOS</a>
+        <a href="os.html?os=macos" class="py-2">macOS</a>
+        <a href="os.html?os=ios" class="py-2">iOS</a>
+        <a href="os.html?os=ipados" class="py-2">iPadOS</a>
+        <a href="saved.html" class="py-2">Saved apps</a>
         <a href="styleguide.html" class="py-2">Style Guide</a>
+        <a href="login.html" class="py-2 text-primary font-semibold">Log in / Register</a>
       </nav>
     </div>
   </header>
@@ -101,26 +107,29 @@
       <div class="grid lg:grid-cols-3 gap-6">
         <!-- FEATURED (spans 2) -->
         <article class="reveal lg:col-span-2 lg:row-span-2 group relative rounded-xl2 border border-border bg-surface overflow-hidden hover:border-primary/50 transition-colors">
-          <div class="relative aspect-[16/9] bg-gradient-to-br from-primary to-shadow grid-backdrop">
-            <span class="absolute top-4 left-4 inline-flex items-center gap-1.5 h-7 px-3 rounded-full bg-primary text-on-primary text-xs font-bold eyebrow">★ Editor's pick</span>
-          </div>
-          <div class="p-6">
-            <div class="flex items-center gap-2 text-xs text-muted mb-3 eyebrow">
-              <span class="text-primary">macOS</span><span>·</span><span>5 min read</span><span>·</span><span>by N. Pany</span>
+          <a href="article.html" class="block">
+            <div class="relative aspect-[16/9] bg-gradient-to-br from-primary to-shadow grid-backdrop">
+              <span class="absolute top-4 left-4 inline-flex items-center gap-1.5 h-7 px-3 rounded-full bg-primary text-on-primary text-xs font-bold eyebrow">★ Editor's pick</span>
+              <button data-bookmark data-id="raycast-2" data-title="Raycast 2.0 turns your Mac launcher into a full workspace OS" data-category="macOS" data-meta="5 min" data-href="article.html" aria-label="Save app" class="bookmark-btn absolute top-3 right-3"></button>
             </div>
-            <h3 class="text-2xl font-bold tracking-tight leading-snug group-hover:text-primary transition-colors">
-              Raycast 2.0 turns your Mac launcher into a full workspace OS
-            </h3>
-            <p class="text-muted mt-3 leading-relaxed">
-              The redesign folds AI commands, window management and a script store into one
-              keystroke. We spent a week living in it — here's what actually sticks.
-            </p>
-            <div class="mt-5 flex items-center gap-3 text-sm">
-              <span class="font-mono text-muted">9.4 / 10</span>
-              <span class="tick-rule flex-1"></span>
-              <a href="#" class="font-semibold text-primary hover:underline">Read review →</a>
+            <div class="p-6">
+              <div class="flex items-center gap-2 text-xs text-muted mb-3 eyebrow">
+                <span class="text-primary">macOS</span><span>·</span><span>5 min read</span><span>·</span><span>by N. Pany</span>
+              </div>
+              <h3 class="text-2xl font-bold tracking-tight leading-snug group-hover:text-primary transition-colors">
+                Raycast 2.0 turns your Mac launcher into a full workspace OS
+              </h3>
+              <p class="text-muted mt-3 leading-relaxed">
+                The redesign folds AI commands, window management and a script store into one
+                keystroke. We spent a week living in it — here's what actually sticks.
+              </p>
+              <div class="mt-5 flex items-center gap-3 text-sm">
+                <span class="font-mono text-muted">9.4 / 10</span>
+                <span class="tick-rule flex-1"></span>
+                <span class="font-semibold text-primary group-hover:underline">Read review →</span>
+              </div>
             </div>
-          </div>
+          </a>
         </article>
 
         <!-- BREAKING -->
@@ -153,24 +162,28 @@
 
       <!-- secondary row -->
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
-        <article class="reveal group rounded-xl2 border border-border bg-surface p-5 hover:border-primary/50 transition-colors">
+        <article class="reveal group relative rounded-xl2 border border-border bg-surface p-5 hover:border-primary/50 transition-colors">
+          <button data-bookmark data-id="netnewswire-7" data-title="NetNewsWire 7 brings reader sync to all platforms" data-category="macOS" data-meta="Free" data-href="article.html" aria-label="Save app" class="bookmark-btn absolute top-4 right-4"></button>
           <span class="inline-flex h-6 px-2.5 items-center rounded-full bg-surface2 text-xs font-semibold eyebrow text-muted mb-3">Free</span>
-          <h3 class="font-semibold leading-snug group-hover:text-primary transition-colors">NetNewsWire 7 brings reader sync to all platforms</h3>
+          <h3 class="font-semibold leading-snug pr-10 group-hover:text-primary transition-colors">NetNewsWire 7 brings reader sync to all platforms</h3>
           <p class="text-xs text-muted mt-3 eyebrow">macOS · 1d ago</p>
         </article>
-        <article class="reveal group rounded-xl2 border border-border bg-surface p-5 hover:border-primary/50 transition-colors" data-delay="60">
+        <article class="reveal group relative rounded-xl2 border border-border bg-surface p-5 hover:border-primary/50 transition-colors" data-delay="60">
+          <button data-bookmark data-id="things-4" data-title="Things 4 quietly ships a calendar layer" data-category="iOS" data-meta="Trending" data-href="article.html" aria-label="Save app" class="bookmark-btn absolute top-4 right-4"></button>
           <span class="inline-flex h-6 px-2.5 items-center rounded-full bg-primary/15 text-primary text-xs font-semibold eyebrow mb-3">Trending</span>
-          <h3 class="font-semibold leading-snug group-hover:text-primary transition-colors">Things 4 quietly ships a calendar layer</h3>
+          <h3 class="font-semibold leading-snug pr-10 group-hover:text-primary transition-colors">Things 4 quietly ships a calendar layer</h3>
           <p class="text-xs text-muted mt-3 eyebrow">iOS · 1d ago</p>
         </article>
-        <article class="reveal group rounded-xl2 border border-border bg-surface p-5 hover:border-primary/50 transition-colors" data-delay="120">
+        <article class="reveal group relative rounded-xl2 border border-border bg-surface p-5 hover:border-primary/50 transition-colors" data-delay="120">
+          <button data-bookmark data-id="ivory-2" data-title="Ivory 2 rethinks the timeline for big screens" data-category="iPadOS" data-meta="New" data-href="article.html" aria-label="Save app" class="bookmark-btn absolute top-4 right-4"></button>
           <span class="inline-flex h-6 px-2.5 items-center rounded-full bg-surface2 text-xs font-semibold eyebrow text-muted mb-3">New</span>
-          <h3 class="font-semibold leading-snug group-hover:text-primary transition-colors">Ivory 2 rethinks the timeline for big screens</h3>
+          <h3 class="font-semibold leading-snug pr-10 group-hover:text-primary transition-colors">Ivory 2 rethinks the timeline for big screens</h3>
           <p class="text-xs text-muted mt-3 eyebrow">iPadOS · 2d ago</p>
         </article>
-        <article class="reveal group rounded-xl2 border border-border bg-surface p-5 hover:border-primary/50 transition-colors" data-delay="180">
+        <article class="reveal group relative rounded-xl2 border border-border bg-surface p-5 hover:border-primary/50 transition-colors" data-delay="180">
+          <button data-bookmark data-id="cleanmymac-deal" data-title="CleanMyMac drops to 40% for launch week" data-category="macOS" data-meta="Deal" data-href="article.html" aria-label="Save app" class="bookmark-btn absolute top-4 right-4"></button>
           <span class="inline-flex h-6 px-2.5 items-center rounded-full bg-surface2 text-xs font-semibold eyebrow text-muted mb-3">Deal</span>
-          <h3 class="font-semibold leading-snug group-hover:text-primary transition-colors">CleanMyMac drops to 40% for launch week</h3>
+          <h3 class="font-semibold leading-snug pr-10 group-hover:text-primary transition-colors">CleanMyMac drops to 40% for launch week</h3>
           <p class="text-xs text-muted mt-3 eyebrow">macOS · 2d ago</p>
         </article>
       </div>
@@ -213,20 +226,8 @@
     </div>
   </footer>
 
-  <style type="text/tailwindcss">
-    @layer components {
-      .filter-chip {
-        @apply shrink-0 h-9 px-4 rounded-full border border-border text-sm font-medium text-muted transition-colors whitespace-nowrap;
-      }
-      .filter-chip[aria-pressed="true"] {
-        @apply bg-primary text-on-primary border-primary;
-      }
-      .filter-chip:hover { @apply bg-surface2; }
-      .filter-chip[aria-pressed="true"]:hover { @apply bg-primary-hover; }
-    }
-  </style>
-
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="assets/bookmarks.js"></script>
   <script src="assets/app.js"></script>
 </body>
 </html>

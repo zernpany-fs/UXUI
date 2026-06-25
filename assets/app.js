@@ -49,6 +49,18 @@
       });
     });
 
+    /* reading progress bar (article page) */
+    const bar = document.querySelector("[data-progress-bar]");
+    if (bar) {
+      const doc = document.documentElement;
+      const update = () => {
+        const max = doc.scrollHeight - doc.clientHeight;
+        bar.style.width = (max > 0 ? (doc.scrollTop / max) * 100 : 0) + "%";
+      };
+      window.addEventListener("scroll", update, { passive: true });
+      update();
+    }
+
     /* scroll reveal */
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const targets = document.querySelectorAll(".reveal");
